@@ -1,0 +1,14 @@
+language: php
+php:
+  - '7.1'
+  - '7.2'
+  - 'nightly'
+install:
+  - composer install
+  - cp .env.example .env
+  - touch database/database.sqlite
+  - php artisan key:generate
+  - php artisan migrate
+matrix:
+  allow_failures:
+  - php: nightly
