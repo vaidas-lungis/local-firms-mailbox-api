@@ -1,4 +1,7 @@
 ## About 
+<p align="center">
+<a href="https://travis-ci.org/vaidas-lungis/rss-aggregator"><img src="https://travis-ci.org/vaidas-lungis/rss-aggregator.svg?branch=master" alt="Build Status"></a>
+</p>
 Simple Mailbox API
 
 ## Setup 
