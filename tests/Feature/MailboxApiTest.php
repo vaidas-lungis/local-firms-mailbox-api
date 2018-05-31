@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Message;
+use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -17,6 +18,9 @@ class MailboxApiTest extends TestCase
      */
     public function testBasicUsage()
     {
+        factory(User::class, 1)->create();
+        $user = User::find(1);
+        $this->be($user);
         factory(Message::class, 5)->create();
 
         $result = $this->json('get', route('messages.index'));

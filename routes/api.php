@@ -10,10 +10,11 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::apiResources([
-    'messages' => 'API\MessageController',
-    'archived' => 'API\AchievedMessageController',
-]);
-Route::post('messages/{message}/read', 'API\ReadMessageController')->name('message.read');
-Route::post('messages/{message}/archive', 'API\ArchiveMessageController')->name('message.archive');
+Route::middleware(['auth.basic'])->group(function () {
+    Route::apiResources([
+        'messages' => 'API\MessageController',
+        'archived' => 'API\AchievedMessageController',
+    ]);
+    Route::post('messages/{message}/read', 'API\ReadMessageController')->name('message.read');
+    Route::post('messages/{message}/archive', 'API\ArchiveMessageController')->name('message.archive');
+});
