@@ -16,3 +16,4 @@ Route::apiResources([
     'archived' => 'API\AchievedMessageController',
 ]);
 Route::post('messages/{message}/read', 'API\ReadMessageController');
+Route::post('messages/{message}/archive', 'API\ArchiveMessageController');
