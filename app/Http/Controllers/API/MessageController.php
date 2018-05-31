@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\MessageResource;
+use App\Message;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -35,9 +36,9 @@ class MessageController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Message $message)
     {
-        //
+        return new MessageResource($message);
     }
 
     /**
