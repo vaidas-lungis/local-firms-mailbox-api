@@ -13,4 +13,5 @@
 
 Route::apiResources([
     'messages' => 'API\MessageController',
+    'archived' => 'API\AchievedMessageController',
 ]);
