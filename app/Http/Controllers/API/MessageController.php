@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Message;
+use App\Http\Resources\MessageResource;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -15,7 +15,7 @@ class MessageController extends Controller
      */
     public function index()
     {
-        return Message::collection(\App\Message::paginate());
+        return MessageResource::collection(\App\Message::paginate());
     }
 
     /**

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Message;
+use App\Http\Resources\MessageResource;
 use Illuminate\Http\Request;
 
 class AchievedMessageController extends Controller
@@ -15,7 +15,7 @@ class AchievedMessageController extends Controller
      */
     public function index()
     {
-        return Message::collection(\App\Message::archived()->paginate());
+        return MessageResource::collection(\App\Message::archived()->paginate());
     }
 
     /**
